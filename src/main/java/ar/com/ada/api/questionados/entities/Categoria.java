@@ -1,21 +1,19 @@
 package ar.com.ada.api.questionados.entities;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 import javax.persistence.*;
 
 @Entity
+@Table(name = "categoria")
 public class Categoria {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "categoria_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer categoriaId;
 
-    
     private String nombre;
-
 
     private String descripcion;
 
@@ -54,8 +52,8 @@ public class Categoria {
         this.preguntas = preguntas;
     }
 
-
     public void agregarPregunta(Pregunta pregunta){
         this.preguntas.add(pregunta);
     }
+
 }

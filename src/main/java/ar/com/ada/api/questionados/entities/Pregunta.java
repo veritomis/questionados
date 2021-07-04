@@ -1,20 +1,18 @@
 package ar.com.ada.api.questionados.entities;
-
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 import javax.persistence.*;
 
 @Entity
+@Table (name= "pregunta")
 public class Pregunta {
-    
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "pregunta_id")
     private Integer preguntaId;
 
-    
+    @Column(name = "enunciado")
     private String enunciado;
 
     @ManyToOne //join columns van donde esta FK
@@ -24,9 +22,9 @@ public class Pregunta {
     @OneToMany(mappedBy = "pregunta", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Respuesta> opciones = new ArrayList<>();
 
-    public void agregarRespuesta(Respuesta respuesta) {
+    public void agregarRespuesta(Respuesta respuesta){
         this.opciones.add(respuesta);
-    } 
+    }
 
     public Integer getPreguntaId() {
         return preguntaId;
@@ -50,10 +48,16 @@ public class Pregunta {
 
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
+        this.categoria.agregarPregunta(this);
     }
 
+    public List<Respuesta> getOpciones() {
+        return opciones;
+    }
 
-    
+    public void setOpciones(List<Respuesta> opciones) {
+        this.opciones = opciones;
+    }
 
 
 }

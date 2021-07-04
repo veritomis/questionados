@@ -3,17 +3,15 @@ package ar.com.ada.api.questionados.entities;
 import javax.persistence.*;
 
 @Entity
+@Table(name="respuesta")
 public class Respuesta {
 
-    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "respuesta_id")
+    @Column(name="respuesta_id")
     private Integer respuestaId;
 
-    
     private String texto;
-
 
     private boolean esCorrecta;
 
