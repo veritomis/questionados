@@ -12,7 +12,7 @@ public class Pregunta {
     @Column(name = "pregunta_id")
     private Integer preguntaId;
 
-    @Column(name = "enunciado")
+   
     private String enunciado;
 
     @ManyToOne //join columns van donde esta FK
