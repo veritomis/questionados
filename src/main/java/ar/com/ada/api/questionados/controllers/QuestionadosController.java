@@ -10,7 +10,9 @@ import ar.com.ada.api.questionados.services.CategoriaService;
 import ar.com.ada.api.questionados.services.QuestionadosService;
 import ar.com.ada.api.questionados.entities.Categoria;
 import ar.com.ada.api.questionados.entities.Pregunta;
+import ar.com.ada.api.questionados.models.request.RespuestaAVerificar;
 import ar.com.ada.api.questionados.models.response.GenericResponse;
+import ar.com.ada.api.questionados.models.response.RespuestaVerificada;
 
 @RestController
 public class QuestionadosController {
