@@ -1,13 +1,16 @@
 package ar.com.ada.api.questionados.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RestController;
-
-import ar.com.ada.api.questionados.entities.Pregunta;
-import ar.com.ada.api.questionados.services.QuestionadosService;
-
 import org.springframework.web.bind.annotation.*;
+
+import ar.com.ada.api.questionados.services.CategoriaService;
+import ar.com.ada.api.questionados.services.QuestionadosService;
+import ar.com.ada.api.questionados.entities.Categoria;
+import ar.com.ada.api.questionados.entities.Pregunta;
+import ar.com.ada.api.questionados.models.response.GenericResponse;
 
 @RestController
 public class QuestionadosController {
