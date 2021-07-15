@@ -45,4 +45,22 @@ public class CategoriaController {
 
     }
 
+    @DeleteMapping("/categorias/{id}")
+    public ResponseEntity<?> eliminarCategoriaPorId(@PathVariable Integer id){
+        service.eliminarCategoriaPorId(id);
+
+        GenericResponse respuesta = new GenericResponse();
+
+        respuesta.isOk = true;
+        respuesta.message = "Categoria dada de baja con exito";
+
+        return ResponseEntity.ok(respuesta);
 }
+        
+    }
+
+    
+
+       
+
+        

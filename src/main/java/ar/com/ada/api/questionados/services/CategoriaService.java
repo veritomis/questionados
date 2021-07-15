@@ -57,4 +57,11 @@ public class CategoriaService {
         return repo.existsByNombre(nombre);
     }
 
+    public void eliminarCategoriaPorId(Integer id) {
+        Categoria categoria = this.buscarCategoria(id);
+    
+        repo.deleteById(id);
+    }
+
+
 }
