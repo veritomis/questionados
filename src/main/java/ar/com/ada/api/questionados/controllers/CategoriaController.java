@@ -55,9 +55,9 @@ public class CategoriaController {
         respuesta.message = "Categoria dada de baja con exito";
 
         return ResponseEntity.ok(respuesta);
-}
+    }  
         
-    }
+}
 
     
 
